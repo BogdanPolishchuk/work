@@ -1,0 +1,52 @@
+{% extends 'searching_app/my_bootstrap3.html' %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block bootstrap3_content %}
+    <nav class="navbar navbar-default navbar-fixed-top" style="...">
+        <div class="container">
+            <div class="navbar-header">
+                <span>
+                    <a class="navbar-brand"><i class="fa fa-bomb"></i> FTTB Page</a>
+                </span>
+            </div>
+            <div class="navbar-right">
+                <a href="/fttb"><div class="navbar-text"><button class="btn btn-default btn-xs">FTTB</button></div></a>
+                <a href="/fttb"><div class="navbar-text"><button class="btn btn-default btn-xs">SR-DS config</button></div></a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 100px;">
+        <div class="row">
+            <div class="col-xs-0 col-md-4">
+                <p><b>Введите IP:</b></p>
+                <p><textarea rows="15" cols="15" name="ip_inp" placeholder="ip adresses" id="input_ip_adr" ></textarea></p>
+                <p>
+                    <button class="btn btn-sm btn-success" id="check_ip">GO!</button>
+                    <button class="btn btn-sm btn-danger" id="clear">CLEAR DATA</button>
+                </p>
+                <hr>
+                <p><textarea rows="5" cols="45" name="err_ip" placeholder="error ip adresses" id="error_ip"></textarea></p>
+                <div class="cssload-box cssload-loading" style="display:none" id="loadImg_2"></div>
+            </div>
+
+            <div class="col-xs-0 col-md-8">
+                <!-- start load indicator -->
+
+                <!-- end load indicator -->
+
+                <p><b>System messages:</b></p>
+                <p><textarea rows="1" cols="45" name="mess" placeholder="no message" id="mess" style="background-color: lightgray"></textarea></p>
+                <p><textarea rows="15" cols="100" name="ok_ip" placeholder="ok ip adresses" id="ok_ip"></textarea></p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block add_script %}
+    <script src={% static "ip_input.js" %}></script>
+{% endblock %}
